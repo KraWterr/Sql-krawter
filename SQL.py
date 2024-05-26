@@ -11,15 +11,15 @@ class Injector:
         print("\033[95m╰───────────────────────╯\033[0m")
         print("\033[94mTaranıyor...\033[0m")
 
-        payloads = ["'"]  # Sadece ' karakteri payload olarak kullanılacak
+        payloads = ["'"]  
         check = re.compile("Bilinmeyen Hata|Incorrect syntax|Databaseye bağlanılamıyor|Databasede hata oluştu|Syntax error|Hata oluştu|An error occured|Error MySQL Database|SQL hatası|You have an error|in your syntax|Bilinmeyen karakter|Unclosed.+mark|unterminated.+quote|SQL.+Server|Microsoft.+Database|Fatal.+error", re.I)
 
         with ThreadPoolExecutor(max_workers=10) as executor:
-            # Ana URL için işlem başlat
+            
             future = executor.submit(self.scan, url, payloads, check)
             future.result()
 
-            # Sayfada bulunan tüm bağlantıları bul ve işleme sok
+            
             soup = self.get_soup(url)
             if soup:
                 links = self.extract_links(url, soup)
