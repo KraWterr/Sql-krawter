@@ -53,4 +53,4 @@ Bu kod bir yazılımcı tarafından oluşturulmuştur. Daha fazla bilgi için [@
 
 ---
 
-Bu açıklama, projenizi GitHub'da paylaşırken gerekli bilgileri sağlayacak ve kullanıcılara aracın nasıl kullanılacağı konusunda rehberlik edecektir.
+
